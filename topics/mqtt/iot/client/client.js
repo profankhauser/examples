@@ -16,7 +16,6 @@ client.on("error", (err) => {
 client.on("message", function (topic, message) {
   console.log(`received message for topic "${topic}"`);
   console.log(message.toString());
-  client.end();
 });
 
 // shortcut to subscribe to a topic
