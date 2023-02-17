@@ -4,7 +4,7 @@ const WebSocketServer = require("ws").Server;
 const clients = new Set();
 
 // create server and setup handler for every new connection from a client
-const server = new WebSocketServer({ port: 8001 });
+const server = new WebSocketServer({ host: "0.0.0.0", port: 8001 });
 server.on("connection", (client) => {
   clients.add(client);
   console.log(`new client: ${clients.size} clients connected`);
@@ -30,3 +30,5 @@ server.on("connection", (client) => {
     }
   });
 });
+
+console.log("listening on 0.0.0.0:8001");
