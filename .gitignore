@@ -4,3 +4,4 @@ node_modules
 *.tfstate
 *.tfstate.backup
 *.zip
+.ipynb_checkpoints
