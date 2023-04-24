@@ -8,5 +8,5 @@ services:
   # nodejs client
   client:
     build: client
-    volumes:
-      - "./client:/usr/src/app"
+    #volumes:
+    #  - "./client:/usr/src/app"
