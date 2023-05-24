@@ -5,10 +5,4 @@ module.exports = class Session {
     this.id = crypto.randomUUID();
     this.userId = user.id;
   }
-
-  attributes() {
-    return {
-      id: this.id,
-    };
-  }
 };
