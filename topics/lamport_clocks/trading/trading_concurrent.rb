@@ -24,11 +24,11 @@ eve.receive(bid2)
 eve.receive(bid3)
 
 # lets collect all bids in a random order
-bids = [bid1, bid2, bid3, bid4].shuffle
 puts "\nbids in random order:"
+bids = [bid1, bid2, bid3, bid4].shuffle
 bids.each{ |bid| puts bid }
 
 # lets order them by their lamport timestamp
-bids = bids.sort_by{ |bid| bid[:timestamp] }
-puts "\nbids in lamport timestamp order:"
+puts "\nbids in timestamp order:"
+bids = LamportClock.sort(bids)
 bids.each{ |bid| puts bid }

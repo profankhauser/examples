@@ -25,7 +25,7 @@ puts "\nbids in random order:"
 bids = [bid1, bid2, bid3].shuffle
 bids.each{ |bid| puts bid }
 
-# lets order them by their lamport timestamp
+# lets order them by their timestamp
 puts "\nbids in timestamp order:"
-bids = LamportClock.sort(bids)
+bids = VectorClock.sort(bids)
 bids.each{ |bid| puts bid }
