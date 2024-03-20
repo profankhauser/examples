@@ -7,6 +7,6 @@ resource "aws_lambda_function" "grade" {
 
   role = aws_iam_role.lambda_api.arn
 
-  runtime = "ruby2.7"
+  runtime = "ruby3.2"
   handler = "handler.process"
 }
