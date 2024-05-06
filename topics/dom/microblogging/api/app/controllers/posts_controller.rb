@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  # Disable CSRF-check
+  skip_before_action :verify_authenticity_token
+
   # GET /posts or /posts.json
   def index
     @posts = Post.all

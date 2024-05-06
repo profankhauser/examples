@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy posts ]
+  
+  # Disable CSRF-check
+  skip_before_action :verify_authenticity_token
 
   # GET /users or /users.json
   def index
