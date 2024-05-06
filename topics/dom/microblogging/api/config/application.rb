@@ -23,5 +23,16 @@ module Microblogging
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Insert Rack-CORS middleware at the very top of the middleware stack
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://localhost:4000'
+        resource '*',
+          headers: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+          methods: [:get, :post, :put, :patch, :delete, :options, :head],
+          credentials: true
+      end
+    end
   end
 end
